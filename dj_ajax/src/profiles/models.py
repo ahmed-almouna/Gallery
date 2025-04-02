@@ -10,5 +10,5 @@ class Profile(models.Model):
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
-    def __STR__(self):
-        return f"profile of the ser {self.user.username}"
+    def __str__(self):
+        return f"profile of the user {self.user.username}"
