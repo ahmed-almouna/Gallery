@@ -13,7 +13,7 @@ const csrf = document.getElementsByName('csrfmiddlewaretoken')
 
 const url = window.location.href
 
-const alerBox = document.getElementById('alert-box')
+const alertBox = document.getElementById('alert-box')
 console.log('csrf', csrf[0].value)
 
 const getCookie =(name) => {
@@ -32,6 +32,12 @@ const getCookie =(name) => {
     return cookieValue;
 }
 const csrftoken = getCookie('csrftoken');
+
+const deleted = localStorage.getItem('title')
+if (deleted){
+    handleAlerts('danger', `deleted "${deleted}"`)
+    localStorage.clear()
+}
 
 const likeUnlikePosts = ()=> {
     const likeUnlikeForms = [...document.getElementsByClassName('like-unlike-forms')]

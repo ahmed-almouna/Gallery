@@ -98,7 +98,7 @@ def update_post(request, pk):
 
 
 def delete_post(request, pk):
-    obj = Post.object.get(pk=pk)
+    obj = Post.objects.get(pk=pk)
     if request.headers.get('x-requested-with') == 'XMLHttpRequest': #different than one in video
         obj.delete()
         return JsonResponse({})
