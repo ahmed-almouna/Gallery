@@ -21,9 +21,6 @@ const authorInput = document.getElementById('id_author')
 
 const csrf = document.getElementsByName('csrfmiddlewaretoken')
 
-// backBtn.addEventListener('click', ()=>{
-//     history.back()
-// })
 
 $.ajax({
     type: 'GET',
@@ -63,7 +60,6 @@ $.ajax({
 
         titleInput.value = data.title
         bodyInput.value = data.body
-        authorInput.value = data.author
 
         spinnerBox.classList.add('not-visible')
     },

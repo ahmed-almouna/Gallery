@@ -6,4 +6,4 @@ class PostForm(forms.ModelForm):
     # body = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 3}))
     class Meta:
         model = Post
-        fields = ('title', 'body',)
+        fields = ('title', 'body')

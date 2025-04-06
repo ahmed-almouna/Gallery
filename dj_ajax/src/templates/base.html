@@ -15,22 +15,20 @@
     <!-- Custom css -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
-    <!-- dropzone -->
+    <!-- Dropzone -->
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-    <!--<link rel="stylesheet" href="{% static 'dropzone.css' %}">
-    <script src="{% static 'dropzone.js' %}" defer></script> used the one above which is different than in video-->
 
     <!-- Custom js -->
     <script src="{% static 'functions.js' %}" defer></script>
     {% block scripts %}
     {% endblock scripts %}
 
-    <title>read posts | {% block title %}{% endblock title %}</title>
+    <title>{% block title %}{% endblock title %}</title>
   </head>
   <body>
     {% include "navbar.html" %}
-    <div class="container mt-3 mb-3">
+    <div class="container mt-3">
         {% block content %}
         {% endblock content %}
     </div>

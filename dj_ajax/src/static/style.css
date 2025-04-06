@@ -2,6 +2,7 @@
     display: none;
 }
 
+/* Custom drop zone */
 .dz {
     border: dashed !important;
     border-color: #CCC !important;

@@ -1,3 +1,4 @@
+// to show error popups, success popups, etc.
 const handleAlerts = (type, msg) => {
     alertBox.innerHTML = `
         <div class="alert alert-${type}" role="alert">
