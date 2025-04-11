@@ -14,7 +14,7 @@ def post_list_and_create(request):
     form = PostForm(request.POST or None)
     # qs = Post.objects.all()
 
-    if request.headers.get('x-requested-with') == 'XMLHttpRequest': #different than one in video
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest': #
         if form.is_valid():
             author = Profile.objects.get(user=request.user)
             instance = form.save(commit=False)
@@ -47,7 +47,7 @@ def post_detail(request, pk):
 
 @login_required
 def load_post_data_view(reuqest, num_posts):
-    if reuqest.headers.get('x-requested-with') == 'XMLHttpRequest': #different than one in video
+    if reuqest.headers.get('x-requested-with') == 'XMLHttpRequest': #
         visiable = 3
         upper = num_posts
         lower = upper - visiable
@@ -70,7 +70,7 @@ def load_post_data_view(reuqest, num_posts):
 
 @login_required
 def post_detail_data_view(request, pk):
-    if request.headers.get('x-requested-with') == 'XMLHttpRequest': #different than one in video
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest': #
         obj = Post.objects.get(pk=pk)
         data = {
             'id': obj.id,
@@ -85,7 +85,7 @@ def post_detail_data_view(request, pk):
 
 @login_required
 def like_unlike_post(request):
-    if request.headers.get('x-requested-with') == 'XMLHttpRequest': #different than one in video
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest': #
         pk = request.POST.get('pk')
         obj = Post.objects.get(pk=pk)
         if request.user in obj.liked.all():
@@ -101,7 +101,7 @@ def like_unlike_post(request):
 @action_permission
 def update_post(request, pk):
     obj = Post.objects.get(pk=pk)
-    if request.headers.get('x-requested-with') == 'XMLHttpRequest': #different than one in video
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest': #
         new_title = request.POST.get('title')
         new_body = request.POST.get('body')
         obj.title = new_title
@@ -117,7 +117,7 @@ def update_post(request, pk):
 @action_permission
 def delete_post(request, pk):
     obj = Post.objects.get(pk=pk)
-    if request.headers.get('x-requested-with') == 'XMLHttpRequest': #different than one in video
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest': #
         obj.delete()
         return JsonResponse({})
     #return JsonResponse({'msg': 'access denied - ajax only'})
