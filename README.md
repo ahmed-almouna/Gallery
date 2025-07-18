@@ -1,6 +1,6 @@
 # Gallery
 
-A simple web app where you can share your cool photos with others.
+A simple web app where you can share your cool photos with others. 
 
 ## Features:
 - Seamless experience sharing and interacting with posts.
